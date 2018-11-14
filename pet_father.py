@@ -13,6 +13,13 @@ class Critter(object):
         self.hunger += 1
         self.boredom +=1
 
+
+    #metoda wyswietlajaca informacje o obiekcie
+    def __str__(self):
+        stats = "Obiekt klasy Critter\n"
+        stats += "name: " + self.name + "\nhunger:" + str(self.hunger) + "\nboredom:" + str(self.boredom) + "\n"
+        return stats
+
     #własciwość mood
     @property
     def mood(self):
@@ -70,6 +77,8 @@ def main():
             crit.eat()
         elif choice == "3":
             crit.play()
+        elif choice == "4":
+            print(crit)
         else:
             print("Nieprawidlowy wybór")
 
